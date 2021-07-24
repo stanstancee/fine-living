@@ -1,0 +1,13 @@
+.btn{
+	display:inline-block;
+	cursor:pointer;
+	font-family:Arial;
+	padding:8px 20px;
+	text-decoration:none;
+    text-transform: uppercase;
+
+    & .btn-dark{
+
+        background-color: $secondary;
+    }
+}

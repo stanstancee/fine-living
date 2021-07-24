@@ -1,0 +1,28 @@
+.navigation{
+    background-color: $dark;
+    color:$light;
+}
+.nav{
+    &-links ul li a{
+        transition: border-bottom .3s linear, padding .3s ;
+        &:hover{
+            border-bottom: 2px solid $primary;
+            padding: 10px;
+        }
+    }
+}
+
+.nav-enter {
+    transform: scale(0, 0);
+  }
+  .nav-enter-active {
+    transform: scale(1, 1);
+    transition: transform .5s linear;
+  }
+  .nav-exit {
+    transform: scale(1, 1);
+  }
+  .nav-exit-active {
+    transform: scale(0, 0);
+    transition: transform .5s linear;
+  }
