@@ -1,0 +1,15 @@
+.product-details, .description{
+    p{
+        color: $secondary;
+    }
+    h3,li,h2,h4{
+        color:$dark;
+    }
+    span{
+        color: $primary;
+    }
+    ul{
+        background: $light;
+    }
+
+}

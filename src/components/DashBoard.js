@@ -1,34 +1,51 @@
 import PropTypes from "prop-types";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import Product from './Product';
 import Categories from './Categories'
-import MidPage from './MidPage'
-import Navigation from './Navigation'
+import Product from './Product'
+import About from './About'
 
-
-function mapStateToProps({ products }) {
+function mapStateToProps({ products,categories }) {
+    const newProduct = products.slice(-1)
     return {
+        newProduct,
         products,
+        categories
     };
 }
 
 class DashBoard extends Component {
     render() {
-        const { products } = this.props
+        const { newProduct, products,categories } = this.props
         return (
-            <div>
-                <div className="new-product">
-                    <Navigation />
+            <main>
+                <section className="section">
+                    {newProduct.map((product, index) =>
+                        <div className="new-product" key={index}>
+                            <div className="first">
+                                <h3>new product</h3>
+                                <h1>{product.title}</h1>
+                                <p>{product.description}</p>
+                                <button className="btn-primary">SEE product</button>
+                            </div>
+                            <div className="second">
+                                <img src={product.image} alt={product.title}></img>
+                            </div>
 
-                </div>
+                        </div>)}
+                </section>
+
+
                 <div className="container__div">
-                    <Categories />
-                    <MidPage products={products} />
+                <Categories categories={categories} />
+                    <div className="products">
+                        {products.map((product, index) => <Product key={index} product={product} />)}
+                    </div>
+                    <About />
 
                 </div>
 
-            </div>
+            </main>
         );
     }
 }

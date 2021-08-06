@@ -1,13 +1,22 @@
+@import '../utilities/extends';
+
 .btn{
-	display:inline-block;
-	cursor:pointer;
-	font-family:Arial;
-	padding:8px 20px;
-	text-decoration:none;
-    text-transform: uppercase;
 
-    & .btn-dark{
 
-        background-color: $secondary;
-    }
+&-dark{
+	@extend %btn;
+	background: $dark;
+	color:$light;
+
+}
+&-light{
+	@extend %btn;
+	background-color: lighten($secondary, 40%);
+	color:$dark;
+}
+&-primary{
+	@extend %btn;
+	background:$primary;
+	color:$light;
+}
 }

@@ -1,0 +1,19 @@
+%btn{
+    display:inline-block;
+    border: 0;
+	cursor:pointer;
+	padding:10px 20px;
+	text-decoration:none;
+    text-transform: uppercase;
+    width: 50%;
+    font-weight: 700;
+    font-size: 0.8rem;
+    -webkit-transition: opacity 0.3s linear;
+    transition: opacity 0.3s linear;
+
+
+    &:hover{
+        opacity: 0.5;
+
+    }
+}

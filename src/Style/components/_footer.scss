@@ -1,0 +1,26 @@
+.footer {
+    color: $light;
+    p {
+        color: lighten($secondary,20%);
+    }
+    &-thick-line> div{
+        background-color: $primary;
+    }
+    &-social li{
+        :hover{
+            color:$primary;
+        }
+
+    }
+
+
+    @include for-size(tablet-portrait-up) {
+        .nav-links {
+            font-size: 0.8em;
+        }
+    }
+}
+
+footer {
+    background-color: $dark;
+}

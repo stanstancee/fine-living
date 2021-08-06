@@ -1,9 +1,15 @@
 
 @import './utilities/variables';
+@import './utilities/mixins';
+
 @import './reset/reset';
+@import './reset/typography';
 @import './layout/layout';
 @import './components/categories';
 @import './components/buttons';
 @import './components/navigation';
-@import './utilities/mixins'
+@import './components/footer';
+@import './views/dashboard';
+@import './views/productDtails.scss'
+
 

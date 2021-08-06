@@ -13,10 +13,9 @@ const store = createStore(reducers, middleware)
 const  persistor = persistStore(store)
 
 
-
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate persistor={persistor}>
+    <PersistGate persistor={persistor} loading={null}>
     <Router>
       <App />
     </Router>

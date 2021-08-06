@@ -1,4 +1,4 @@
-import {RECEIVE_CATEGORIES, RECEIVE_PRODUCTS} from '../actions/actionType'
+import {RECEIVE_CATEGORIES, RECEIVE_PRODUCTS,IS_LOADING} from '../actions/actionType'
 
 
 
@@ -31,6 +31,19 @@ export  function categories(state=[],action){
         default:
             return state
     }
+
+
+
+}
+
+export function isLoading(state=true,action){
+    switch(action.type){
+        case IS_LOADING:
+            return action.loading
+        default:
+            return state
+    }
+
 
 
 

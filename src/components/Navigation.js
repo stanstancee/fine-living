@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { List, XLg, Cart3 } from 'react-bootstrap-icons';
 import { CSSTransition } from 'react-transition-group'
 import { useWindowDimensions } from '../utils/Helpers'
+import { Link } from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 export const Nav = () => {
     return (
@@ -29,6 +31,7 @@ export const Nav = () => {
 
 const Navigation = () => {
     const [show, setShow] = useState({ showIcon: false, showNav: false })
+    const counter = useSelector((state)=> state.cart)
 
     const handleShow = () => {
         setShow((prev) => {
@@ -41,6 +44,7 @@ const Navigation = () => {
     }
 
     return (
+        <header>
         <div className="navigation">
             <div className="nav-heading">
                 <div className="icons" onClick={handleShow}>
@@ -48,9 +52,9 @@ const Navigation = () => {
                     }
 
                 </div>
-                <h3>Fine Living</h3>
+                <h2 className="heading">Fine Living</h2>
             </div>
-            {useWindowDimensions().width >= 1200 ?
+            {useWindowDimensions().width >= 900 ?
 
                 <Nav />
                 :
@@ -65,9 +69,12 @@ const Navigation = () => {
 
             }
             <div className="nav-cart">
-                <Cart3 size={30} color="#F2F2F2" />
+                <Link to="cart">
+                <Cart3 size={30} color="#F2F2F2" /><span>{counter.length > 0? counter.length: ''}</span>
+                </Link>
             </div>
         </div>
+        </header>
     );
 
 }

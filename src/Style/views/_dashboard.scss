@@ -1,0 +1,52 @@
+.article{
+    span{
+        color:$primary;
+    }
+    h1{
+        color: $dark;
+        font-size: 2rem;
+    }
+    p{
+        color: $secondary;
+    }
+}
+
+.new-product{
+   h3,p{
+       color:$primary;
+
+
+   }
+   h3{
+       letter-spacing: 2px;
+       font-weight: 200;
+   }
+   .first{
+    z-index: 2;
+
+   }
+   h1{
+       color:$light;
+
+   }
+   img{
+       filter:brightness(40%);
+       @include for-size(tablet-landscape-up){
+           filter: none;
+       }
+   }
+
+}
+
+//product component
+.product{
+      button{
+          font-size: small;
+      }
+          h2{
+            font-size: 15px;
+            color:$dark;
+          }
+
+    }
+

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { receiveProductsAsync } from '../actions/products'
-//import Footer from './footer'
+import Footer from './Footer'
 import DashBoard from './DashBoard'
-import Cart from './Cart'
+// import Category from './Category'
 import ProductDetails from './ProductDetails'
 import { Route, Switch } from 'react-router-dom'
+import Navigation from './Navigation'
+import Cart from './Cart'
 
 
 
@@ -21,6 +23,7 @@ class App extends Component {
   render() {
     return (
       <div  >
+        <Navigation />
         <Switch>
           <Route exact path="/">
             <DashBoard />
@@ -28,12 +31,12 @@ class App extends Component {
           <Route path="/products">
             <ProductDetails />
           </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
         </Switch>
 
-        <Cart />
-
-
-
+        <Footer />
       </div>
     );
   }

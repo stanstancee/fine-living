@@ -12,10 +12,29 @@
     color: $dark;
     font-weight: 400;
   }
-  & h3 {
+  & h4 {
     color: $dark;
     font-weight: 900;
   }
+}
+
+.category {
+  p{
+    color:$secondary;
+  }
+  h3{
+    color: $dark;
+  }
+  h4{
+    color: $primary
+  }
+  box-shadow: 10px 40px 20px -10px $secondary, -10px 40px 35px -10px $secondary;
+
+}
+.topic{
+  background: $dark;
+  color:$light;
+
 }
 
 .my-node-enter {

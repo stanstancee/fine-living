@@ -5,7 +5,7 @@ import Product from './Product'
 import Categories from './Categories'
 import About from './About'
 import {addProductToCart} from '../actions/cart'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 function mapStateToProps({ categories, products, isLoading }) {
     const id = 2;
@@ -18,7 +18,7 @@ function mapStateToProps({ categories, products, isLoading }) {
         const obj = filterProduct(products, id, categories)
         return {
             obj,
-            checkId,
+
 
         }
     }
@@ -36,6 +36,7 @@ function mapStateToProps({ categories, products, isLoading }) {
 class ProductDetails extends Component {
     handleClick = ()=>{
         const {obj:{product}, dispatch} = this.props
+
         dispatch(addProductToCart(product))
 
     }
@@ -59,7 +60,7 @@ class ProductDetails extends Component {
                             <h2>{product.title}</h2>
                             <p>{product.description}</p>
                             <h4><span>price</span>: ${product.price}</h4>
-                            <button className="btn-primary">Add to cart</button>
+                            <button className="btn-primary" onClick={this.handleClick}>Add to cart</button>
                         </div>
                     </div>
                     <div className="description">

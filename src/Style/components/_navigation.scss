@@ -1,8 +1,16 @@
+header{
+  background: $dark;
+}
 .navigation{
     background-color: $dark;
     color:$light;
+
 }
 .nav{
+  &-links{
+    background-color: adjust-color($color: $dark, $alpha: -0.1);
+    z-index: 3;
+  }
     &-links ul li a{
         transition: border-bottom .3s linear, padding .3s ;
         &:hover{
