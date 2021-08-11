@@ -5,7 +5,7 @@ import { useWindowDimensions } from '../utils/Helpers'
 import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
-export const Nav = () => {
+export const Nav = ({handleShow}) => {
     const categories= useSelector((state) => state.categories)
     return (
         <nav className="nav-links">
@@ -14,7 +14,7 @@ export const Nav = () => {
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-            {categories.map((category,index) => <li key={index} ><Link to={`/categories/${category}`}>{category}</Link></li>)}
+            {categories.map((category,index) => <li onClick={handleShow} key={index} ><Link to={`/categories/${category}`}>{category}</Link></li>)}
             </ul>
         </nav>
     )
@@ -55,7 +55,7 @@ const Navigation = () => {
                     className="nav-links"
                     unmountOnExit
                 >
-                    <Nav />
+                    <Nav  handleShow = { handleShow } />
                 </CSSTransition>
 
             }

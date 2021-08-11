@@ -1,5 +1,6 @@
 import { PayPalButton } from "react-paypal-button-v2";
 
+
 export default  function PayPal({total}){
 
     return (
