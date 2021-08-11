@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { Component, } from 'react';
 import { connect } from 'react-redux';
 import { incrementCount, decrementCount, removeCart } from '../actions/cart';
@@ -38,6 +39,15 @@ function mapStateToProps({ cart }) {
 }
 
 class Cart extends Component {
+    state={
+        name:"",
+        address:"",
+        phone:"",
+        city:"",
+        country:"",
+        zip:"",
+        email:""
+    }
     increment = (index) => {
         const { dispatch } = this.props
         dispatch(incrementCount(index))
@@ -51,8 +61,19 @@ class Cart extends Component {
         dispatch(removeCart(index))
     }
     calcTotal = (arr) => {
-        const reducer = (accumulator, currentValue) => accumulator + currentValue.quantity ? (currentValue.price * currentValue.quantity) : currentValue.price;
-        return arr.reduce(reducer, 0)
+        const reducer = (accumulator, currentValue) =>  currentValue.quantity ? accumulator +(currentValue.price * currentValue.quantity)
+        : accumulator +currentValue.price;
+        return arr.reduce(reducer,0)
+
+    }
+    handleChange = (e) => {
+        const value = e.target.value
+        this.setState(prev => {
+            return {
+                ...prev,   [e.target.name]: value
+                }
+
+        })
 
     }
     render() {
@@ -79,21 +100,21 @@ class Cart extends Component {
                                     <label htmlFor="name">
                                         Name:
                                     </label>
-                                    <input type="text" placeholder="Stanley Luke" required />
+                                    <input type="text" placeholder="Stanley Luke" name="name" onChange={this.handleChange} required />
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="email">
                                         Email:
                                     </label>
-                                    <input type="email" placeholder="stan@email.com" required />
+                                    <input type="email" placeholder="stan@email.com" name="email" onChange={this.handleChange} required />
                                 </div>
 
                                 <div className="form-group">
                                     <label htmlFor="phone">
                                         Phone:
                                     </label>
-                                    <input type="tel" placeholder="+23481491819" required />
+                                    <input type="tel" placeholder="+23481491819" name="phone" onChange={this.handleChange} required />
                                 </div>
 
                             </div>
@@ -103,25 +124,25 @@ class Cart extends Component {
                                     <label htmlFor="address">
                                         Address:
                                     </label>
-                                    <input type="text" placeholder="2A john's street" required />
+                                    <input type="text" placeholder="2A john's street" name="address" onChange={this.handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="zip">
                                         Zip Code:
                                     </label>
-                                    <input type="number" placeholder="344" />
+                                    <input type="number" placeholder="344" name="zip" onChange={this.handleChange} />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="city">
                                         City:
                                     </label>
-                                    <input type="text" placeholder="Ikeja" required/>
+                                    <input type="text" placeholder="Ikeja" required name ="city" onChange={this.handleChange}   />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="country">
                                         Country:
                                     </label>
-                                    <input type="text" placeholder="Nigeria" required />
+                                    <input type="text" placeholder="Nigeria" name="country" required onChange={this.handleChange} />
                                 </div>
                             </div>
                         </form>
@@ -167,6 +188,12 @@ class Cart extends Component {
             </div>
         );
     }
+}
+
+Cart.propTypes = {
+
+  cart: PropTypes.array,
+  dispatch: PropTypes.func
 }
 
 export default connect(

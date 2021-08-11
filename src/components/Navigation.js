@@ -6,24 +6,15 @@ import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 
 export const Nav = () => {
+    const categories= useSelector((state) => state.categories)
     return (
         <nav className="nav-links">
+
             <ul>
                 <li>
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                 </li>
-                <li>
-                    <a href="/">Electronics</a>
-                </li>
-                <li>
-                    <a href="/">Jewelery</a>
-                </li>
-                <li>
-                    <a href="/">Men's Clothing</a>
-                </li>
-                <li>
-                    <a href="/">Women's Clothing</a>
-                </li>
+            {categories.map(category => <li><Link to={`/categories/${category}`}>{category}</Link></li>)}
             </ul>
         </nav>
     )
@@ -52,7 +43,7 @@ const Navigation = () => {
                     }
 
                 </div>
-                <h2 className="heading">Fine Living</h2>
+                <h2 className="heading"><Link to="/">Fine Living</Link></h2>
             </div>
             {useWindowDimensions().width >= 900 ?
 
@@ -69,7 +60,7 @@ const Navigation = () => {
 
             }
             <div className="nav-cart">
-                <Link to="cart">
+                <Link to="/cart">
                 <Cart3 size={30} color="#F2F2F2" /><span className="cart-counter">{counter.length > 0? counter.length: ''}</span>
                 </Link>
             </div>

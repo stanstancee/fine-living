@@ -20,6 +20,12 @@ header{
     }
 }
 
+.cart-counter{
+  background-color: $primary;
+  color: $light;
+  border-radius: 50%;
+}
+
 .nav-enter {
     transform: scale(0, 0);
   }

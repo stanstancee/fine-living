@@ -5,12 +5,17 @@ import Product from './Product'
 import Categories from './Categories'
 import About from './About'
 import {addProductToCart} from '../actions/cart'
-import { Link } from 'react-router-dom'
+import Page404 from './Page404'
 
-function mapStateToProps({ categories, products, isLoading }) {
-    const id = 5;
+
+
+
+function mapStateToProps({ categories, products, isLoading },ownProps) {
+    const id = parseInt(ownProps.match.params.id)
+
     const productIds = new Set(products.map(product => product.id))
     const checkId = productIds.has(id)
+
 
 
     //If id is valid,then return all the formatted data
@@ -42,12 +47,20 @@ class ProductDetails extends Component {
     }
 
     render() {
-        if (this.props.isLoading) {
+        const {obj, isLoading, checkId, id} = this.props
+        if (isLoading) {
             return <h6>Loading.....</h6>
+
+
+
 
         }
 
-        const { product, otherProducts, otherCategories } = this.props.obj
+
+        if(checkId === false){
+            return <Page404 id={id} />
+        }
+        const { product, otherProducts, otherCategories } = obj
 
         return (
             <div>
@@ -90,7 +103,7 @@ class ProductDetails extends Component {
 
                     <h5>More products</h5>
                     <div className="products">
-                        {otherProducts.map((product, index) => <Product key={index} product={product} />)}
+                        {otherProducts.map((product, index) => <Product location={this.props.location.pathname} key={index} product={product} prd = {true} />)}
 
                     </div>
 

@@ -16,7 +16,8 @@ const Category = (props) => {
       in={inProp} timeout={300}
       classNames="my-node"
       onEntered={() => setInProp(false)}
-      onExited={() => history.push("/products")}
+      onExited = {()=> history.push(`/categories/${category}`)}
+
     >
       <div className="categories" onClick={() => setInProp(true)} >
         <div>
@@ -24,7 +25,7 @@ const Category = (props) => {
         </div>
         <h4>{category}</h4>
         <div className="shop">
-          <h6> <Link to="/products">shop</Link></h6>
+          <h6> <Link to={`categories/${category}`}>shop</Link></h6>
           <ChevronRight color="#DB7C4C" size="20" />
         </div>
       </div>

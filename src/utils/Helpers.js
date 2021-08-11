@@ -8,8 +8,8 @@ const getWindowDimensions = () => {
     };
 }
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 export const useWindowDimensions = () => {
 
@@ -26,7 +26,8 @@ export const useWindowDimensions = () => {
 
 export const filterCategory = (category, products, positive = true) => {
     const check = positive ? (product) => product.category === category : (product) => product !== category
-    return products.filter(check)
+    return  products.filter(check)
+
 }
 
 export const checkEven = (index) => {
@@ -43,10 +44,12 @@ export const filterProduct = (products, id, categories = []) => {
 
 
 
+
     return {
         product,
         otherProducts,
-        otherCategories
+        otherCategories,
+
     }
 
 
