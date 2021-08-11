@@ -5,6 +5,7 @@ import Categories from './Categories'
 import Product from './Product'
 import About from './About'
 
+
 function mapStateToProps({ products,categories }) {
     const newProduct = products.slice(-1)
     return {
@@ -17,6 +18,7 @@ function mapStateToProps({ products,categories }) {
 class DashBoard extends Component {
     render() {
         const { newProduct, products,categories } = this.props
+
         return (
             <main>
                 <section className="section">
