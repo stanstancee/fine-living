@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Categories from './Categories'
 import Product from './Product'
 import About from './About'
+import {Link} from 'react-router-dom'
 
 
 function mapStateToProps({ products,categories ,isLoading}) {
@@ -32,7 +33,7 @@ class DashBoard extends Component {
                                 <h3>new product</h3>
                                 <h1>{product.title}</h1>
                                 <p>{product.description}</p>
-                                <button className="btn-primary">SEE product</button>
+                                <button className="btn-primary"><Link to={`products/${product.id}`}>SEE PRODUCT</Link></button>
                             </div>
                             <div className="second">
                                 <img src={product.image} alt={product.title}></img>
