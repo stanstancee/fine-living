@@ -70,7 +70,7 @@ const Navigation = () => {
             }
             <div className="nav-cart">
                 <Link to="cart">
-                <Cart3 size={30} color="#F2F2F2" /><span>{counter.length > 0? counter.length: ''}</span>
+                <Cart3 size={30} color="#F2F2F2" /><span className="cart-counter">{counter.length > 0? counter.length: ''}</span>
                 </Link>
             </div>
         </div>

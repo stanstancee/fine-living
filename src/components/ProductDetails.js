@@ -8,7 +8,7 @@ import {addProductToCart} from '../actions/cart'
 import { Link } from 'react-router-dom'
 
 function mapStateToProps({ categories, products, isLoading }) {
-    const id = 2;
+    const id = 5;
     const productIds = new Set(products.map(product => product.id))
     const checkId = productIds.has(id)
 

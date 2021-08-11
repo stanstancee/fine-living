@@ -10,49 +10,47 @@ section.section {
     background-color: $dark;
     .new-product {
         margin: 0 5vw;
-        max-height:400px;
-        .second, img{
+        max-height: 400px;
+        .second,
+        img {
             width: 100%;
-
         }
-        img{
-            max-height: 400px;;
+        img {
+            max-height: 400px;
         }
         .first {
             position: absolute;
             left: 10vw;
-            right:10vw;
+            right: 10vw;
+            top:7vh;
             @include col-flex;
             align-items: center;
             > * {
                 margin-top: 10px;
             }
             text-align: center;
-            @include for-size(tablet-portrait-up){
-                top:14vh;
+            @include for-size(tablet-portrait-up) {
+                top: 14vh;
             }
-
-
         }
-        @include for-size(tablet-landscape-up){
-            .first{
+        @include for-size(tablet-landscape-up) {
+            .first {
                 position: static;
                 text-align: left;
                 align-items: flex-start;
             }
-            .first,.second{
-                width:40%
+            .first,
+            .second {
+                width: 40%;
             }
             @include row-flex;
-            justify-content:space-between;
-
-
+            justify-content: space-between;
         }
-
     }
 }
 //categories component container and products component container
-.categories-container,.products {
+.categories-container,
+.products {
     display: -ms-grid;
     display: grid;
     gap: 40px;
@@ -63,16 +61,18 @@ section.section {
 }
 
 //categories element and product
-.categories, .product,.topic {
+.categories,
+.product,
+.topic {
     align-items: center;
     margin-top: 50px;
     @include col-flex;
 }
-.topic{
+.topic {
     margin: 0;
     height: 100px;
 }
-.categories{
+.categories {
     & img {
         position: relative;
         height: 100px;
@@ -84,85 +84,92 @@ section.section {
     }
 }
 
-.category,.category-reverse{
-    >*,.first>* {
-        margin:10px 0;
+.category,
+.category-reverse {
+    > *,
+    .first > * {
+        margin: 10px 0;
     }
-    .first{
+    .first {
         @include col-flex;
         align-items: center;
         text-align: center;
-
     }
-    .image-container{
+    .image-container {
         height: 200px;
     }
-    img{
-        width: 80% ;
-        height:80%;
+    img {
+        width: 80%;
+        height: 80%;
     }
-    button{
-        width:80%;
+    button {
+        width: 80%;
     }
-
 }
-@include for-size(tablet-landscape-up){
-    .category,.category-reverse{
+@include for-size(tablet-landscape-up) {
+    .category,
+    .category-reverse {
         display: flex;
         justify-content: space-between;
         height: 450px;
         align-items: center;
-        >*{
-            width:45%;
+        > * {
+            width: 45%;
         }
     }
-    .category-reverse{
+    .category-reverse {
         flex-direction: row-reverse;
     }
-
 }
 
 // .image-continer is used to wrap images on products,cart and product-details component
-.image-container{
-    height:50%;
-    background:$light;
-    display:flex;
+.image-container {
+    height: 50%;
+    background: $light;
+    display: flex;
     justify-content: center;
-    align-items:center;
-  }
+    align-items: center;
+}
 
-
-.product{
+.product {
     text-align: center;
     max-height: 400px;
-    >*{
-        width:100%;
+    > * {
+        width: 100%;
     }
-      button{
-          width:80%;
-      }
-      img{
-          height: 70%;
-          width: 70%;
-      }
-      :nth-child(2){
-          height:30%;
-       @include col-flex;
-        align-items:center;
-
-      }
-
+    button {
+        width: 80%;
     }
-
-
+    img {
+        height: 70%;
+        width: 70%;
+    }
+    :nth-child(2) {
+        height: 30%;
+        @include col-flex;
+        align-items: center;
+    }
+}
 
 // Navigation Component Layout
 // Mobile first responsive design
+header{
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+}
 .navigation {
     @include row-flex;
     min-height: 8vh;
     border-bottom: 1px solid $light;
     margin: 0 5vw;
+
+
+    .cart-counter{
+        position: relative;
+        bottom:20px;
+        width: 3mm;
+    }
 
     // ".nav" is a prefix which raps all the flex items inside the navigation element.
     .nav {
@@ -303,38 +310,118 @@ section.section {
     }
 }
 
-
 /*
 Product Details view component.
 
 **/
-.product-details-container{
-    @include for-size(tablet-portrait-up){
+.product-details-container {
+    @include for-size(tablet-portrait-up) {
         display: flex;
     }
 }
-.product-details,.description{
-    .image-container{
-        height:350px;
+.product-details,
+.description {
+    .image-container {
+        height: 350px;
     }
 
-    img{
-        width:80%;
-        height:80%;
+    img {
+        width: 80%;
+        height: 80%;
     }
-    margin:10px;
+    margin: 10px;
 
     display: flex;
     flex-direction: column;
 
-
-    .details,aside,article{
-        display:flex;
+    .details,
+    aside,
+    article {
+        display: flex;
         flex-direction: column;
-        >*{
-            margin-top:13px;
+        > * {
+            margin-top: 13px;
         }
-
     }
+}
+
+/**
+Cart component layout
+*/
+.cart-container {
+    display: flex;
+    flex-direction: column-reverse;
+    @include for-size(tablet-landscape-up) {
+        flex-direction: row;
+        justify-content: space-between;
+        > * {
+            width: 47%;
+        }
+    }
+}
+.cart,
+.cart-header {
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+
+    img {
+        width: 80%;
+        height: 80%;
+    }
+    button {
+        width: 90%;
+    }
+    :nth-child(2) {
+        flex: 2;
+    }
+    > * {
+        flex: 1;
+    }
+    margin-top: 10px;
+}
+
+.cart-quantity {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.cart-header {
+    height: 50px;
+}
+
+.cart-summary,.grand-total{
+    @include row-flex;
 
 }
+.summary{
+    text-align: right;
+}
+
+form {
+    padding: 10px 0;
+   > div{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       align-items: center;
+       padding: 10px 0;
+
+       h4, .form-group.address{
+           width: 100%;
+       }
+       .form-group{
+           width:47%;
+           padding: 10px 0;
+       }
+   }
+   .form-group{
+       flex-direction: column;
+       display: flex;
+   }
+}
+
