@@ -100,7 +100,7 @@ class ProductDetails extends Component {
                 </div>
                 <div className="container__div">
 
-                    <h5>More products</h5>
+                    <h3 className="heading">More products</h3>
                     <div className="products">
                         {otherProducts.map((product, index) => <Product location={this.props.location.pathname} key={index} product={product} prd = {true} />)}
 
