@@ -2,7 +2,7 @@
     display: grid;
     display: -ms-grid;
     gap: 40px;
-    margin: 10px;
+    margin: 20px;
 }
 
 // new product section
@@ -107,7 +107,7 @@ section.section {
         width: 100%;
     }
     p{
-        padding: 0 7px;
+        padding: 0 10px;
     }
 }
 @include for-size(tablet-landscape-up) {
