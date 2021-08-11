@@ -3,13 +3,13 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.1-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D6.14.0-blue.svg" />
   <img src="https://img.shields.io/badge/node-%3E%3D14.16.11-blue.svg" />
-  <a href="https://github.com/stanstancee/ud-mobile-flashcards#readme" target="_blank">
+  <a href="https://github.com/stanstancee/fine-living#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/stanstancee/ud-mobile-flashcards/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/stanstancee/fine-living/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/stanstancee/ud-mobile-flashcards/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/stanstancee/fine-living/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/stanstancee/mobile-flashcards" />
   </a>
   <a href="https://twitter.com/statan" target="_blank">
@@ -40,8 +40,8 @@ npm start
 yarn start
 ```
 ## Specification
-This projects was created with **create-react-app**
-State management with **Redux**
+- This projects was created with **create-react-app**
+- State management with **Redux**
 
 
 
@@ -74,5 +74,5 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 Copyright © 2021 [Stanley Ifeoha](https://github.com/stanstancee).<br />
-This project is [MIT](https://github.com/stanstancee/ud-mobile-flashcards/blob/master/LICENSE) licensed.
+This project is [MIT](https://github.com/stanstancee/fine-living/blob/master/LICENSE) licensed.
 
