@@ -11,7 +11,7 @@ export const Nav = ({handleShow}) => {
         <nav className="nav-links">
 
             <ul>
-                <li>
+                <li onClick={handleShow} >
                     <Link to="/">Home</Link>
                 </li>
             {categories.map((category,index) => <li onClick={handleShow} key={index} ><Link to={`/categories/${category}`}>{category}</Link></li>)}
