@@ -11,6 +11,7 @@ import Navigation from './Navigation'
 import Cart from './Cart'
 import ScrollToTop from './ScrollToTop'
 import Page404 from './Page404'
+import LoadingBar from 'react-redux-loading'
 
 
 
@@ -26,8 +27,11 @@ class App extends Component {
   render() {
     return (
       <ScrollToTop>
+
       <div  >
+
         <Navigation />
+        <LoadingBar />
         <Switch>
           <Route exact path="/" component={DashBoard} />
           <Route path='/products/:id' exact component={ProductDetails} />

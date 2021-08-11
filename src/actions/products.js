@@ -1,5 +1,6 @@
 import { RECEIVE_CATEGORIES, RECEIVE_PRODUCTS, IS_LOADING } from './actionType'
 import axios from 'axios'
+import {showLoading, hideLoading} from 'react-redux-loading'
 
 export const receiveProducts = (products) => {
     return {
@@ -25,12 +26,14 @@ export const isLoading = loading => {
 
 export const receiveProductsAsync = (url1,url2) => {
     return (dispatch) => {
+        dispatch(showLoading())
         return axios.all([axios.get(url1),axios.get(url2)])
             .then(axios.spread((...response)=>{
                 dispatch(isLoading(true))
                 dispatch(receiveProducts(response[0].data))
                 dispatch(receiveCategories(response[1].data))
                 dispatch(isLoading(false))
+                dispatch(hideLoading())
             }))
             .catch(err => console.log(err))
 

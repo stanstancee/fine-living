@@ -14,7 +14,7 @@ export const Nav = () => {
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-            {categories.map(category => <li><Link to={`/categories/${category}`}>{category}</Link></li>)}
+            {categories.map((category,index) => <li key={index} ><Link to={`/categories/${category}`}>{category}</Link></li>)}
             </ul>
         </nav>
     )

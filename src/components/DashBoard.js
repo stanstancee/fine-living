@@ -6,18 +6,22 @@ import Product from './Product'
 import About from './About'
 
 
-function mapStateToProps({ products,categories }) {
+function mapStateToProps({ products,categories ,isLoading}) {
     const newProduct = products.slice(-1)
     return {
         newProduct,
         products,
-        categories
+        categories,
+        isLoading
     };
 }
 
 class DashBoard extends Component {
     render() {
-        const { newProduct, products,categories } = this.props
+        const { newProduct, products,categories,isLoading } = this.props
+        if(isLoading){
+            return <div className="spin"></div>
+        }
 
         return (
             <main>

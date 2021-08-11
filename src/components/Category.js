@@ -5,7 +5,7 @@ import { filterCategory, checkEven } from '../utils/Helpers'
 import Categories from './Categories'
 import About from './About'
 
-function mapStateToProps({ products, categories }, ownProps) {
+function mapStateToProps({ products, categories, isLoading }, ownProps) {
 
     const id = ownProps.match.params.category
 
@@ -17,7 +17,8 @@ function mapStateToProps({ products, categories }, ownProps) {
     return {
         category,
         categoryList,
-        title
+        title,
+        isLoading
 
     };
 }
@@ -25,7 +26,10 @@ function mapStateToProps({ products, categories }, ownProps) {
 class Category extends Component {
 
     render() {
-        const { category, categoryList,title } = this.props
+        const { category, categoryList,title , isLoading} = this.props
+        if(isLoading){
+            return <div className="spin"></div>
+        }
         return (
             <div>
 

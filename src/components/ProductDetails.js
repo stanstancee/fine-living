@@ -41,7 +41,6 @@ function mapStateToProps({ categories, products, isLoading },ownProps) {
 class ProductDetails extends Component {
     handleClick = ()=>{
         const {obj:{product}, dispatch} = this.props
-
         dispatch(addProductToCart(product))
 
     }
@@ -49,7 +48,7 @@ class ProductDetails extends Component {
     render() {
         const {obj, isLoading, checkId, id} = this.props
         if (isLoading) {
-            return <h6>Loading.....</h6>
+            return <div className="spin"></div>
 
 
 
