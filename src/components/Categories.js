@@ -25,7 +25,7 @@ const Category = (props) => {
         </div>
         <h4>{category}</h4>
         <div className="shop">
-          <h6> <Link to={`categories/${category}`}>shop</Link></h6>
+          <h6>shop</h6>
           <ChevronRight color="#DB7C4C" size="20" />
         </div>
       </div>
